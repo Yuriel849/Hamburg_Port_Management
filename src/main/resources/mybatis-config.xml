@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <typeAlias alias="CargoDto" type="org.hamburg.port.domain.CargoDto"/>
+        <typeAlias alias="CompanyAddrsDto" type="org.hamburg.port.domain.CompanyAddrsDto"/>
+        <typeAlias alias="CompanyContactsDto" type="org.hamburg.port.domain.CompanyContactsDto"/>
+        <typeAlias alias="CompanyDto" type="org.hamburg.port.domain.CompanyDto"/>
+        <typeAlias alias="CrewDto" type="org.hamburg.port.domain.CrewDto"/>
+        <typeAlias alias="DockDto" type="org.hamburg.port.domain.DockDto"/>
+        <typeAlias alias="ShipDto" type="org.hamburg.port.domain.ShipDto"/>
+        <typeAlias alias="ShipsLogDto" type="org.hamburg.port.domain.ShipsLogDto"/>
+    </typeAliases>
+</configuration>

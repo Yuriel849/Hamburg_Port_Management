@@ -6,7 +6,7 @@
     <typeAliases>
         <typeAlias alias="CargoDto" type="org.hamburg.port.domain.CargoDto"/>
         <typeAlias alias="CompanyAddrsDto" type="org.hamburg.port.domain.CompanyAddrsDto"/>
-        <typeAlias alias="CompanyContactsDto" type="org.hamburg.port.domain.CompanyContactsDto"/>
+        <typeAlias alias="ContactsDto" type="org.hamburg.port.domain.ContactsDto"/>
         <typeAlias alias="CompanyDto" type="org.hamburg.port.domain.CompanyDto"/>
         <typeAlias alias="CrewDto" type="org.hamburg.port.domain.CrewDto"/>
         <typeAlias alias="DockDto" type="org.hamburg.port.domain.DockDto"/>

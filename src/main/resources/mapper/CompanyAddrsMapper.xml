@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.hamburg.port.dao.CompanyAddrsMapper">
+    <!-- Insert new company address    -->
+    <insert id="insert" parameterType="CompanyAddrsDto">
+        INSERT INTO company_addrs
+        VALUES (#{company_id}, #{address})
+    </insert>
+
+    <!-- Get company address info       -->
+    <select id="select" parameterType="String">
+        SELECT company_id, address FROM company_addrs WHERE id = #{company_id}
+    </select>
+
+    <!-- Update company address info    -->
+    <update id="update" parameterType="CompanyAddrsDto">
+        UPDATE company_addrs
+        SET    address = #{address}
+        WHERE  company_id = #{company_id}
+    </update>
+
+    <!-- Delete company address info    -->
+    <delete id="delete" parameterType="String">
+        DELETE FROM company_addrs WHERE company_id = #{company_id}
+    </delete>
+
+    <!-- Delete all company addresses   -->
+    <delete id="deleteAll">
+        DELETE FROM company_addrs
+    </delete>
+
+    <!-- Get number of company addresses-->
+    <select id="count" resultType="int">
+        SELECT count(*) FROM company_addrs
+    </select>
+
+    <!-- Get all company addresses' info-->
+    <select id="selectAll" resultType="CompanyDto">
+        SELECT company_id, address FROM company_addrs
+    </select>
+</mapper>

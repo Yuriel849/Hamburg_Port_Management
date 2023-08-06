@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.hamburg.port.dao.ContactsMapper">
+    <!-- Insert new contacts -->
+    <insert id="insert" parameterType="ContactsDto">
+        INSERT INTO contacts
+        VALUES (#{name}, #{position}, #{email}, #{company_id})
+    </insert>
+
+    <!-- Get all contacts for a company -->
+    <select id="selectByCompany" parameterType="String" resultType="ContactsDto">
+        SELECT name, position, email, company_id
+        FROM contacts WHERE company_id = #{company_id}
+    </select>
+
+    <!-- Get all info for one contact by name -->
+    <select id="selectByName" parameterType="String" resultType="ContactsDto">
+        SELECT name, position, email, company_id
+        FROM contacts where name = #{name}
+    </select>
+
+    <!-- Update contacts info -->
+    <update id="update" parameterType="CompanyDto">
+        UPDATE contacts
+        SET   name = #{name}, position = #{position}, email = #{email}
+        WHERE company_id = #{company_id}
+    </update>
+
+    <!-- Delete all contacts for a company -->
+    <delete id="deleteByCompany" parameterType="String">
+        DELETE FROM contacts WHERE company_id = #{company_id}
+    </delete>
+
+    <!-- Delete one contact by name -->
+    <delete id="deleteByName" parameterType="String">
+        DELETE FROM contacts where name = #{name}
+    </delete>
+
+    <!-- Delete all contacts -->
+    <delete id="deleteAll">
+        DELETE FROM contacts
+    </delete>
+
+    <!-- Get number of contacts -->
+    <select id="count" resultType="int">
+        SELECT count(*) FROM contacts
+    </select>
+
+    <!-- Get all contacts' info  -->
+    <select id="selectAll" resultType="ContactsDto">
+        SELECT name, position, email, company_id FROM contacts
+    </select>
+</mapper>
